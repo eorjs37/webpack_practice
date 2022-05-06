@@ -1,16 +1,13 @@
 {
   "name": "webpack_study",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "webpack 공부",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src/js -w -d dist/js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.17.10"
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10"
   }
 }
