@@ -4,7 +4,7 @@ import "@babel/polyfill";
 import { pi, power, Foo } from './lib';
 
 console.log(pi);
-console.log('test push 3');
+console.log('test push 4');
 console.log(power(pi, pi));
 
 const f = new Foo();
