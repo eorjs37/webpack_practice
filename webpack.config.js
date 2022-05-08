@@ -7,8 +7,10 @@ module.exports = {
   entry: ['@babel/polyfill','./src/js/main.js', './src/sass/main.scss'],
   // 컴파일 + 번들링된 js 파일이 저장될 경로와 이름 지정
   output: {
-    path: path.resolve(__dirname, 'dist/js'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    clean: true,
+    assetModuleFilename: 'img/[name][ext][query]' // dont use [hash] in name
   },
   plugins: [
     // 컴파일 + 번들링 CSS 파일이 저장될 경로와 이름 지정
@@ -44,7 +46,22 @@ module.exports = {
           "postcss-loader"
         ],
         exclude: /node_modules/
-      }
+      },
+      // { test: /\.html$/, use: ["html-loader"] },
+      {
+        // 이미지 포멧: PNG, JP(E)G, GIF, SVG, WEBP
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: "asset/resource",
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "img",
+            },
+          }
+        ]
+      },
     ]
   },
   devtool: 'source-map',

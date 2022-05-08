@@ -239,3 +239,9 @@ module.exports = {
   ],
 }
 ```
+
+
+## File-loader
+```
+npm install file-loader --save-dev
+```
