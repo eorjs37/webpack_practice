@@ -1,5 +1,6 @@
 // src/js/main.js
 // ES6 모듈
+import "@babel/polyfill";
 import { pi, power, Foo } from './lib';
 
 console.log(pi);
