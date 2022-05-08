@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "webpack 공부",
   "scripts": {
-    "serve": "webpack -w"
+    "serve": "webpack -w",
+    "build": "webpack build"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -11,8 +12,12 @@
     "@babel/preset-env": "^7.17.10",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "node-sass": "^7.0.1",
+    "postcss": "^8.4.13",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.5.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.72.0",

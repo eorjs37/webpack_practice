@@ -181,3 +181,61 @@ module.exports = {
   }
 }
 ```
+
+## index.html dist폴더 밑에 만들어주기
+```
+npm install --save-dev html-webpack-plugin
+```
+
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+  .
+  .
+  .
+  plugins: [
+    new HtmlWebpackPlugin()
+  ]
+}
+```
+
+## PostCSS Loader 구성
+```
+npm i postcss postcss-loader -D
+```
+
+```javascript
+//webpack.config.js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader', 'postcss-loader' /* 로더 설정 */]
+      }
+    ]
+  }
+}
+```
+
+```
+npm i postcss-preset-env -D
+```
+
+```javascript
+//postcss.config.js
+
+
+module.exports = {
+  plugins: [
+    [
+      'postcss-preset-env',
+      {
+        browsers: '> 5% in KR, defaults, not IE < 11',
+        // CSS Grid 활성화 [false, 'autoplace', 'no-autoplace']
+        autoprefixer: { grid: 'autoplace' },
+      },
+    ],
+  ],
+}
+```

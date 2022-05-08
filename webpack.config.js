@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // enntry file
@@ -11,7 +12,8 @@ module.exports = {
   },
   plugins: [
     // 컴파일 + 번들링 CSS 파일이 저장될 경로와 이름 지정
-    new MiniCssExtractPlugin({ filename: 'css/style.css' })
+    new MiniCssExtractPlugin({ filename: 'css/style.css' }),
+    new HtmlWebpackPlugin()
   ],
   module: {
     rules: [
@@ -34,7 +36,8 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",   // translates CSS into CommonJS
-          "sass-loader"   // compiles Sass to CSS, using Node Sass by default
+          "sass-loader",   // compiles Sass to CSS, using Node Sass by default
+          "postcss-loader"
         ],
         exclude: /node_modules/
       }
