@@ -5,6 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   // enntry file
   entry: ['@babel/polyfill','./src/js/main.js', './src/sass/main.scss'],
+  resolve:{
+    alias: {
+      '@': path.resolve(__dirname,'src/')
+    },
+  },
   // 컴파일 + 번들링된 js 파일이 저장될 경로와 이름 지정
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -17,7 +22,7 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: 'css/style.css' }),
     new HtmlWebpackPlugin({
       title:'First Webpack',
-      template:'index.html',
+      template:'./src/index.html',
       favicon:'./src/assets/favicon.png'
     })
   ],
@@ -57,7 +62,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "img",
+              outputPath: "assets/img",
             },
           }
         ]

@@ -2,6 +2,7 @@
 // ES6 모듈
 import "@babel/polyfill";
 import { pi, power, Foo } from './lib';
+import "@/assets/img/home.png";
 
 console.log(pi);
 console.log('test push 4');
