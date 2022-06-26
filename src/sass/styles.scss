@@ -1,5 +1,6 @@
 header{
     position: fixed;
+    width: 100%;
 }
 
 .header_inner{
@@ -37,4 +38,19 @@ header{
 
 
 /*=============== welcome ===============*/
+section.welcome{
+    position: absolute;
+    max-width: 1920px;
+    width: 100%;
+    top: 100px;
+    background-image: url('../assets/img/slide-welcome-01.png') no-repeat;
 
+    .welcome-inner{
+        position: relative;
+    }
+
+    .welcome-title{
+        position: absolute;
+        top: 30px;
+    }
+}
