@@ -52,7 +52,6 @@ module.exports = {
         ],
         exclude: /node_modules/
       },
-      // { test: /\.html$/, use: ["html-loader"] },
       {
         // 이미지 포멧: PNG, JP(E)G, GIF, SVG, WEBP
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
@@ -61,7 +60,8 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "assets/[contenthash].[ext]",
+              publicPath:'./dist',
+              name: 'assets/[name].[ext]',
               outputPath: "assets/img",
             },
           }
