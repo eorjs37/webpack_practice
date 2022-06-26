@@ -3,6 +3,7 @@
 import "@babel/polyfill";
 import { pi, power, Foo } from './lib';
 import "@/assets/img/home.png";
+import "@/assets/img/logo.png";
 
 console.log(pi);
 console.log('test push 4');
