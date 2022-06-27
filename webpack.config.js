@@ -15,7 +15,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     clean: true,
-    assetModuleFilename: 'img/[name][ext][query]' // dont use [hash] in name
+    assetModuleFilename: 'img/[name][ext][query]' 
+    // dont use [hash] in name
   },
   plugins: [
     // 컴파일 + 번들링 CSS 파일이 저장될 경로와 이름 지정
@@ -55,18 +56,12 @@ module.exports = {
       {
         // 이미지 포멧: PNG, JP(E)G, GIF, SVG, WEBP
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
-        type: "asset/resource",
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              publicPath:'./dist',
-              name: 'assets/[name].[ext]',
-              outputPath: "assets/img",
-            },
-          }
-        ]
-      },
+        type: "asset/resource", //폴더로 관리하고 싶을때
+        generator:{
+          publicPath:'assets/', //url이나 main.js에 import시 assets/으로시작
+          outputPath:'assets' //dist에 배출할 경우 assets폴더로 내보님
+        }
+      }
     ]
   },
   devtool: 'source-map',
