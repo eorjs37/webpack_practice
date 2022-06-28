@@ -51,7 +51,12 @@ section.welcome{
     }
 
     .welcome-title{
+        display: inline-block;
         position: absolute;
+        font-size: 34px;
+        font-weight: bold;
         top: 30px;
+        line-height: 1.2em;
+        left: 300px;
     }
 }
