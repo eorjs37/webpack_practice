@@ -4,7 +4,8 @@
   "description": "webpack 공부",
   "scripts": {
     "serve": "webpack -w",
-    "build": "webpack build"
+    "build": "webpack build",
+    "lint": "eslint src --fix"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -12,6 +13,11 @@
     "@babel/preset-env": "^7.17.10",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-hooks": "^0.4.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "file-loader": "^6.2.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
